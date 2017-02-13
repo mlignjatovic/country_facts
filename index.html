@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Country Data</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.9/css/uikit.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+      <section id="app">
+        <section class="search-area uk-container uk-container-center">
+          <h1 class="uk-text-center uk-light">Country Data</h1>
+          <div class="form">
+            <input class="uk-input uk-form-width-large uk-form-large" type="text" name="search" v-model="name"> 
+            <a href="#target"  uk-scroll class="uk-button uk-button-primary" v-on:click="countrySearch">Search</a>
+          </div>
+        </section>
+        <section class="uk-container uk-container-center uk-margin-medium-top" >
+         <!-- There is some bug in firefox so user must click twice before the page scrolles to anchor -->
+        <div id="target" class="uk-section uk-section-muted uk-padding-large" v-show="visible">
+
+        <h2   class="uk-text-center">{{countryName}}</h2>
+        <div uk-grid class="uk-margin-medium-top">
+          <div class="uk-width-1-3@m">
+            <h4>Flag:</h4>
+              <img v-bind:src="flag">
+                  <h4>Capital City: </h4>
+                  <p>{{capital}}</p>
+                    <h4>Internet Domain:</h4>
+                    <p>{{topLevelDomain}}</p>
+                        
+            </div>
+          
+          <div class="uk-width-1-3@m">
+            <h4>Region:</h4>
+               <p>{{region}}</p>
+                  <h4>Subregion:</h4>
+                      <p>{{subRegion}}</p>
+                       <h4>Population: </h4>
+                       <p>{{population}}</p>
+          </div>
+          <div class="uk-width-1-3@m">
+            <h4>Native Name:</h4>
+               <p>{{nativeName}}</p>
+                       <h4>Calling Code: </h4>
+                       <p>{{callingCode}}</p>
+                       <h4>Time Zones:</h4>
+                      <span v-for="timeZone in timeZones">{{timeZone}} </span>
+              </div>
+            </div>
+          
+              <div id="map" class="uk-margin-large">
+              </div>
+              
+          </div>
+        </section>
+        
+        
+      </section>
+      <footer class="uk-padding-small">
+        <p class="uk-text-center"><img src="img/mllogo.svg" alt="logo"> by Mladen Ignjatovic</p>
+      </footer>
+<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.4/numeral.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.9/js/uikit.min.js"></script>   
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+
+  <script src="js/app.js"></script>
+  
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWYPAJcEXItYcNCTgP1PVVaxNEjQQ0oxM&callback=initMap">
+        </script>
+
+  </body>
+  </html>

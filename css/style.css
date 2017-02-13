@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+}
+body {
+	background: linear-gradient(rgba(0,0,0, 0.6),rgba(0,0,0, 0.6)), url('../img/map.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+section#app section.search-area h1 {
+	font-family: 'Montserrat', sans-serif;
+	color: #C48F00;
+	text-shadow: 0 0 7px #000;
+	text-transform: uppercase;
+	font-weight: bolder;
+}
+section.uk-container {
+	padding-top: 15%;
+}
+div.form {
+	margin: 5% auto;
+	text-align: center;
+}
+#map {
+	width: 50%;
+	height: 300px;
+}
+footer {
+	background-color: #000;
+	color: #fff;
+	height: 10vh;
+}
+footer p {
+	margin: 0;
+}
+footer img {
+	width: 40px;
+}
