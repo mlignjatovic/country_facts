@@ -17,8 +17,7 @@ new Vue ({
 	 	longitude: '',
 	 	area: '',
 	 	nativeName: '',
-	 	flag: '',
-		target: '#target' 
+	 	flag: ''
 	 },
 		 methods: {
 		 	countrySearch: function () {
@@ -46,8 +45,9 @@ new Vue ({
                     app.countryName = 'Please Enter Valid Country Name';
 			
                 }) ;
+				var target = $("#target");
 				$('html, body').animate({
-					scrollTop: this.target.offset().top
+					scrollTop: target.offset().top
 				 }, 2000);
 		 	},
 		 	initMap: function () {
