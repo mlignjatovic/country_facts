@@ -17,10 +17,16 @@ new Vue ({
 	 	longitude: '',
 	 	area: '',
 	 	nativeName: '',
-	 	flag: ''
+	 	flag: '',
+		target: '#target' 
 	 },
 		 methods: {
 		 	countrySearch: function () {
+				
+				$('html, body').animate({
+					scrollTop: this.target.offset().top;
+				    }, 2000);
+				
 		 		var app = this;
 		 		app.visible = true;
 		 		axios.get('https://restcountries.eu/rest/v1/name/' + this.name)
