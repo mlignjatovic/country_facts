@@ -45,10 +45,10 @@ new Vue ({
 		 		}).catch(function(error){
                     app.countryName = 'Please Enter Valid Country Name';
 			
+                }) ;
 				$('html, body').animate({
 					scrollTop: this.target.offset().top
 				 }, 2000);
-                }) ;
 		 	},
 		 	initMap: function () {
 		 		var app = this;
