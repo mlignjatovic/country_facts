@@ -17,13 +17,14 @@ new Vue ({
 	 	longitude: '',
 	 	area: '',
 	 	nativeName: '',
-	 	flag: ''
+	 	flag: '',
+		target: '#target'
 	 },
 		 methods: {
 		 	countrySearch: function () {
-				var target = $("#target");
+				
 				$('html, body').animate({
-					scrollTop: target.offset().top
+					scrollTop: this.target.offset().top
 				    }, 2000);
 		 		var app = this;
 		 		app.visible = true;
