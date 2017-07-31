@@ -24,7 +24,7 @@ new Vue ({
 		 	countrySearch: function () {
 				
 				$('html, body').animate({
-					scrollTop: this.target.offset().top;
+					scrollTop: this.target.offset().top
 				    }, 2000);
 				
 		 		var app = this;
