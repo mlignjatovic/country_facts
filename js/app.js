@@ -21,6 +21,7 @@ new Vue ({
 	 },
 		 methods: {
 		 	countrySearch: function () {
+				$( "#target" ).scroll();
 		 		var app = this;
 		 		app.visible = true;
 		 		axios.get('https://restcountries.eu/rest/v1/name/' + this.name)
