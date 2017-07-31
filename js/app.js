@@ -22,11 +22,6 @@ new Vue ({
 	 },
 		 methods: {
 		 	countrySearch: function () {
-				
-				$('html, body').animate({
-					scrollTop: this.target.offset().top
-				    }, 2000);
-				
 		 		var app = this;
 		 		app.visible = true;
 		 		axios.get('https://restcountries.eu/rest/v1/name/' + this.name)
@@ -49,6 +44,10 @@ new Vue ({
 		 			app.area = response.data[0].area;
 		 		}).catch(function(error){
                     app.countryName = 'Please Enter Valid Country Name';
+			
+				$('html, body').animate({
+					scrollTop: this.target.offset().top
+				 }, 2000);
                 }) ;
 		 	},
 		 	initMap: function () {
